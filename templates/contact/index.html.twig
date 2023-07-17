@@ -1,0 +1,74 @@
+{% extends 'base.html.twig' %}
+
+
+
+{% block head %} 
+{% block title %} 
+Contact
+{% endblock %}
+{% endblock head %}
+
+
+
+
+{% block body %}
+<section>
+  <div class="breadcrumb">
+
+<ul class="breadcrumb">
+  <li><a href="accueil.html">Accueil </a></li>
+  <li><a href="contact.html">Contact </a></li>
+  
+</ul>
+  </div>
+</section>
+
+  <section class="formulaire">
+
+    <div class="table">
+      <img src="images/ipad-632394.jpg" alt="images">
+    </div>
+
+
+    <div class="numero">
+      <h3>Contactez - Nous</h3>
+      <p>Pour toutes demande de renseignement du suggestions
+        sur notre site .<br>N’hesitez pas à nous contacter a cette formulaire ,<br>Nous vous repondrons dans les plus
+        brefs delais. </p>
+    </div>
+
+
+
+    <section class="center">
+
+      <div class="" style="width:400px; margin:auto">
+        
+        <div class="row">
+          <form class="col-xs-12" id="contactFormulaire">
+            <div class="form-group " >
+              <label for="email">Email:</label>
+              <input type="email" class="form-control" id="email" placeholder="Enter email" onblur="checkEmail()" name="email">
+              <span  class="erreurFormulaire" id="erreurEmail">Veillez saisir votre Email</span>
+            </div>
+          
+            <div class="form-group" >
+              <label for="tel">Telephone:</label>
+              <input type="telephone" class="form-control" id="tel" placeholder="telephone" onblur="checkTel()" name="telephone">
+              <span class="erreurFormulaire" id="erreurTelephone">Veuillez renseigner votre numero</span>
+              <span class="erreurFormulaire" id="erreurNumeroTelephone">Veuillez corriger votre numéro</span>
+            </div>
+            <div class="form-group">
+              <label for="comment"></label>
+              <textarea class="form-control" rows="6" id="message" name="message"></textarea>
+              <span class="erreurFormulaire" id="erreurMessage">Veillez saisir votre Message</span>
+            </div>
+            <button type="submit" id="submit" style="margin-top:8px; margin-bottom:8px;" class="btn btn-primary">Envoyer votre message</button>
+          
+          </form>
+        </div>
+      </div>
+
+      </div>
+
+    </section>
+{% endblock %}

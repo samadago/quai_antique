@@ -1,0 +1,39 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Plats index{% endblock %}
+
+
+{% block body %}
+    <h1>Plat index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Titre</th>
+                <th>Prix</th>
+                <th>Description</th>
+                <th>Categorie</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for plat in plats %}
+            <tr>
+                <td>{{ plat.titre }}</td>
+                <td>{{ plat.prix }}</td>
+                <td>{{ plat.description }}</td>
+                <td>{{ plat.categorie.nom }}</td>
+            
+                <td>
+                    <a href="{{ path('plat_edit', {'id': plat.id}) }}">Modifier</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="5">Un aucun plat n'est trouvé dans la base de données</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('plat_add') }}">Ajouter un nouveau plat</a>
+{% endblock %}

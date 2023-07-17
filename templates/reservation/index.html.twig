@@ -1,0 +1,55 @@
+{% extends 'base.html.twig' %}
+
+{% block title %} Reservation{% endblock %}
+
+
+
+{% block body %}
+    <h1>Reservation</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Nom</th>
+                <th>Prénom</th>
+                <th>Email</th>
+                <th>Téléphone</th>
+                <th>Heure d'arrivé</th>
+                <th>Nombre de couverts</th>
+                <th>Allérgies</th>
+                
+            </tr>
+        </thead>
+
+ <tbody>
+        {% for reservation in reservations %}
+            <tr>
+
+                <td>{{ reservation.nom }}</td>
+                <td>{{ reservation.prenom }}</td>
+                <td>{{ reservation.email }}</td>
+                <td>{{ reservation.telephone }}</td>
+                <td>{{ reservation.heureArrive | date('d-m-Y H:i') }}</td>
+                <td>{{ reservation.nombreCouverts }}</td>
+                <td>{{ reservation.allergies }}</td>
+            
+                <td>
+                    <a href="{{ path('reservation_edit', {'id': reservation.id}) }}">Modifier</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="5">Un aucun reservation n'est trouvé dans la base de données </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('reservation_add') }}">Ajouter un nouveau reservation</a>
+{% endblock %}
+
+
+
+
+
+

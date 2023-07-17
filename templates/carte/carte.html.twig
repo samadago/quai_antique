@@ -1,0 +1,46 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello CarteController!
+{% endblock %}
+
+{% block body %}
+    <section>
+        <div class="breadcrumb">
+
+            <ul class="breadcrumb">
+                <li>
+                    <a href="accueil.html">Accueil
+                    </a>
+                </li>
+                <li>
+                    <a href="notrecarte.html">La Carte</a>
+                </li>
+            </ul>
+        </div>
+    </section<sectionclass="notrecarte" id="notrecarte">
+
+    <div class="row justify-content: center">
+        <div class="col50" style="align-items:center;">
+
+            <h1>la Carte</h1>
+        </div>
+        <div class="container mt-5">
+        {% for categorie in categories %}
+            <div class="row grand">
+                <div class="grand titre">
+                    <h2>{{ categorie.nom }}</h2>
+                </div>
+                {% for plat in categorie.plats %}
+                <div class="col-sm-4 ">
+
+                    <h4>{{plat.titre}}</h4>
+                    <p>{{plat.description}}</p> {{plat.prix}} EUROS
+                </div>
+                {% endfor %}
+            </div>
+        <hr>
+        {% endfor %}
+        </div>
+        
+        
+    {% endblock %}

@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>
+			{% block title %}Welcome!
+			{% endblock %}
+		</title>
+		<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text></svg>">
+
+		<link rel="stylesheet" href="{{ asset('css/style.css') }}">
+		<link
+		href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+		{# Run `composer require symfony/webpack-encore-bundle` to start using Symfony UX #}
+		{% block stylesheets %}
+			{{ encore_entry_link_tags('app') }}
+		{% endblock %}
+
+		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+		{% block javascripts %}
+			{{ encore_entry_script_tags('app') }}
+
+		{% endblock %}
+	</head>
+
+	<header>
+		<nav class="navbar navbar-expand-sm bg- navbar-">
+			<div class="container-fluid">
+				<div>
+					<a class="navbar-brand" href="#" style="margin-right:10px ;">
+						<img src="images/logo resto.jpg" alt="logo" style="width:80px;" class="rounded-pill"/>
+					</a>
+					<button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"></button>
+					<span class="navbar-toggler-icon"></span>
+				</button>
+
+				<a href="{{ path('app_default') }}" class="logo">
+					<span>
+						Le Quai
+					</span>Antique</a>
+
+			</div>
+
+			<nav class="navbar navbar-expand-lg navbar-light">
+				<button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+					<span class="navbar-toggler-icon"></span>
+				</button>
+				<div class="collapse navbar-collapse" id="navbarCollapse">
+					<div class="navbar-nav">
+						<a href="{{ path('app_default') }}" title="Accueil">Accueil</a>
+						<a href="{{ path('app_carte') }}" title="La Carte">La Carte</a>
+						<a href="{{ path('app_galerie') }}" title="Galerie">Galerie</a>
+						<a href="{{ path('app_contact') }}" title="Contact">Contact</a>				
+						<a href="{{ path('app_login') }}">Connexion</a>
+					</div>
+
+				</div>
+			</nav>
+
+		</nav>
+	</header>
+	{% block body %}{% endblock  %}
+
+	<footer class="row justify-content-center align-items-center">
+		<div class="footer">
+			<div class="row">
+				<div class="adresse">
+					<a href="accueil.html" class="logo">
+						<span>
+							Le Quai
+						</span>Antique</a>
+				</div>
+				<div class="col-sm-4">
+					<h3 class="heure">Adresse</h3>
+					<p class="semaine">Rue de lans 73000 Chambéry</p>
+
+					<a class="style" href="tel:+33 03 94 86 05 64 ">
+						Telephone:0394860564
+					</a><br>
+					<a class="style" href="mailto:quai.antique2023@hotmail.com ">Email:quai.antique2023@hotmail.com</a>
+				</div>
+
+				<div class="col-sm-4">
+					<img src="images/facebook (1).png" alt="images" width="60" height="50">
+					<img src="images/instagram (1).png" alt="images" width="60" height="50"><br>
+
+					<p class="mention">Mentions légales plan du site 2023</p>
+				</div>
+
+
+				<div class="col-sm-4">
+					<h3 class="heure">Heure d’ouverture</h3>
+
+					<p class="semaine">Lundi    12h -14h00 :19h-22h00
+						<br>
+						Mardi    12h -14h00 :19h-22h00
+						<br>
+						Mercredi - fermé
+						<br>
+						Jeudi    12h - 14h00 :19h-22h00
+						<br>
+						Vendredi 12h - 14h00 :19h-22h00
+						<br>
+						Samedi   19h - 23h00
+						<br>
+						Dimanche 12h - 14h00</p>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>
